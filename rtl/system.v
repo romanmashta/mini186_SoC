@@ -673,6 +673,7 @@ module system
 		.AUDIO_R(AUD_R)
 	);
 	 
+	/*
 	DSP32 DSP32_inst
 	(
 		.clkcpu(clk_cpu),
@@ -683,7 +684,7 @@ module system
 		.din(CPU_DOUT),
 		.dout(cpu32_data),
 		.halt(cpu32_halt)
-	);
+	);*/
 	
 	UART_8250 UART(
 		.CLK_18432000(CLK14745600),
