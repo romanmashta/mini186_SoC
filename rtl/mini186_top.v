@@ -6,12 +6,6 @@ module mini186_top
 	    output [3:0] tmds_out_p,
 	    output [3:0] tmds_out_n,
 
-		// output [5:0]VGA_R,
-		// output [5:0]VGA_G,
-		// output [5:0]VGA_B,
-
-		//output VGA_HSYNC,
-		//output VGA_VSYNC,
 		output SDRAM_CLK,
 		output SDRAM_CKE,
 		output SDRAM_nCAS,
@@ -26,10 +20,6 @@ module mini186_top
 		output [7:0]LED,
 		input BTN_SOUTH,
 		input BTN_WEST,
-		//input RX,
-		//output TX,
-		// input RX_EXT,
-		// output TX_EXT,
 		output AUDIO_L,
 		output AUDIO_R,
 		inout PS2CLKA,
@@ -39,9 +29,9 @@ module mini186_top
 		output SD_nCS,
 		output SD_DI,
 		output SD_CK,
-		input SD_DO//,
-		//inout [3:0]GPIO
+		input SD_DO
 	);
+	
 	wire RX_EXT;
 	wire TX_EXT;
 
