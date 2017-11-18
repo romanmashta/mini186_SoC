@@ -41,6 +41,12 @@
 *_summary.xml
 *_usage.xml
 *_xst.xrpt
+*.log
+*_lock
+
+#ip core
+/ipcore_dir/*
+!/ipcore_dir/*.xco
 
 # iMPACT generated files
 _impactbatch.log
@@ -66,3 +72,4 @@ tmp/
 xst/
 _ngo/
 _xmsgs/
+.ncf

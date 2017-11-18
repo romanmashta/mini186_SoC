@@ -398,11 +398,12 @@ module system
 		.CLK_OUT1(clk_cpu) 
 	 );
 
+	/*
 	 dcm_dsp dcm_dsp_inst
 	 (
 		.CLK_IN1(CLK_32MHZ_buf), 
 		.CLK_OUT1(clk_dsp) 
-	 );
+	 );*/
 
 	SDRAM_16bit SDR
 	(
@@ -672,7 +673,7 @@ module system
 		.AUDIO_L(AUD_L),
 		.AUDIO_R(AUD_R)
 	);
-	 
+
 	/*
 	DSP32 DSP32_inst
 	(
