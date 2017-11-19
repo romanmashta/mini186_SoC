@@ -73,3 +73,5 @@ xst/
 _ngo/
 _xmsgs/
 .ncf
+
+build/

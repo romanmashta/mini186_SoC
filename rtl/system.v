@@ -138,7 +138,7 @@ module system
 		 output [12:0]sdr_ADDR,
 		 inout [15:0]sdr_DATA,
 		 output [1:0]sdr_DQM,
-		 input 	CLK_32MHZ,
+		 input 	CLK_50,
 		 output reg [5:0]VGA_R,
 		 output reg [5:0]VGA_G,
 		 output reg [5:0]VGA_B,
@@ -373,18 +373,18 @@ module system
 							 ({8{CPU32_PORT}} & cpu32_data[7:0]) | 
 							 ({8{COM1_PORT}} & COM1_DOUT);
 
-	wire CLK_32MHZ_buf;
+	wire CLK_50_buf;
 	IBUFG #(.IOSTANDARD("DEFAULT")) IBUFG_inst 
    (
-      .O(CLK_32MHZ_buf), // Clock buffer output
-      .I(CLK_32MHZ)  // Clock buffer input (connect directly to top-level port)
+      .O(CLK_50_buf), // Clock buffer output
+      .I(CLK_50)  // Clock buffer input (connect directly to top-level port)
    );
 
-	assign  clk_50_o = CLK_32MHZ_buf;
+	assign  clk_50_o = CLK_50_buf;
 
 	dcm dcm_system 
 	(
-		.CLK_IN1(CLK_32MHZ_buf), 
+		.CLK_IN1(CLK_50_buf), 
 		.CLK_OUT1(clk_25), 
 		.CLK_OUT2(clk_sdr),
 		.CLK_OUT3(sdr_CLK_out),
@@ -394,7 +394,7 @@ module system
 
 	 dcm_cpu dcm_cpu_inst
 	 (
-		.CLK_IN1(CLK_32MHZ_buf), 
+		.CLK_IN1(CLK_50_buf), 
 		.CLK_OUT1(clk_cpu) 
 	 );
 

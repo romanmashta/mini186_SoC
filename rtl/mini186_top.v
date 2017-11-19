@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module mini186_top
 	(
-		input CLK_32MHZ,
+		input CLK_50,
 
 	    output [3:0] tmds_out_p,
 	    output [3:0] tmds_out_n,
@@ -31,7 +31,7 @@ module mini186_top
 		output SD_CK,
 		input SD_DO
 	);
-	
+
 	wire RX_EXT;
 	wire TX_EXT;
 
@@ -78,7 +78,7 @@ module mini186_top
 
 	system sys_inst
 	(
-		.CLK_32MHZ(CLK_32MHZ),
+		.CLK_50(CLK_50),
 		.VGA_R(VGA_R),
 		.VGA_G(VGA_G),
 		.VGA_B(VGA_B),
@@ -126,8 +126,8 @@ module mini186_top
 		.r({VGA_R, 2'b00}),
 		.g({VGA_G, 2'b00}),
 		.b({VGA_B, 2'b00}),
-		 .hsync_t(hsync),
-		 .vsync_t(vsync),
+		 .hsync_t(VGA_HSYNC),
+		 .vsync_t(VGA_VSYNC),
 		 .blank_t(!de)
 	);	
 

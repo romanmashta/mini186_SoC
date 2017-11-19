@@ -1,4 +1,4 @@
-NET "CLK_32MHZ" PERIOD = 20 ns | LOC = "K3";
+NET "CLK_50" PERIOD = 20 ns | LOC = "K3";
 
 NET "SDRAM_CLK"		LOC="G16" | IOSTANDARD=LVTTL;
 NET "SDRAM_CKE"     LOC="H16"   | IOSTANDARD=LVTTL;
@@ -75,23 +75,3 @@ NET "SD_nCS" LOC="K12" | IOSTANDARD=LVTTL;
 NET "SD_DI"     LOC="K11" | IOSTANDARD=LVTTL;
 NET "SD_CK"     LOC="L12" | IOSTANDARD=LVTTL;
 NET "SD_DO"    LOC="M10" | IOSTANDARD=LVTTL;
-
-##Created by Constraints Editor (xc6slx9-tqg144-2) - 2015/06/25
-TIMESPEC TS_TIGx0 = FROM "sys_inst_dcm_cpu_inst_clkfx" TO "sys_inst_dcm_system_clkout0" TIG;
-TIMESPEC TS_TIGx1 = FROM "sys_inst_dcm_cpu_inst_clkfx" TO "sys_inst_dcm_system_clkout1" TIG;
-TIMESPEC TS_TIGx3 = FROM "sys_inst_dcm_cpu_inst_clkfx" TO "sys_inst_dcm_system_clkout3" TIG;
-TIMESPEC TS_TIG10 = FROM "sys_inst_dcm_system_clkout1" TO "sys_inst_dcm_system_clkout0" TIG;
-TIMESPEC TS_TIG01 = FROM "sys_inst_dcm_system_clkout0" TO "sys_inst_dcm_system_clkout1" TIG;
-TIMESPEC TS_TIG1x = FROM "sys_inst_dcm_system_clkout1" TO "sys_inst_dcm_cpu_inst_clkfx" TIG;
-TIMESPEC TS_TIG0x = FROM "sys_inst_dcm_system_clkout0" TO "sys_inst_dcm_cpu_inst_clkfx" TIG;
-TIMESPEC TS_TIG3x = FROM "sys_inst_dcm_system_clkout3" TO "sys_inst_dcm_cpu_inst_clkfx" TIG;
-TIMESPEC TS_TIGx4 = FROM "sys_inst_dcm_cpu_inst_clkfx" TO "sys_inst_dcm_system_clkout4" TIG;
-TIMESPEC TS_TIG4x = FROM "sys_inst_dcm_system_clkout4" TO "sys_inst_dcm_cpu_inst_clkfx" TIG;
-TIMESPEC TS_TIGxy = FROM "sys_inst_dcm_cpu_inst_clkfx" TO "sys_inst_dcm_dsp_inst_clkfx" TIG;
-TIMESPEC TS_TIGyx = FROM "sys_inst_dcm_dsp_inst_clkfx" TO "sys_inst_dcm_cpu_inst_clkfx" TIG;
-#
-#INST "sys_inst/cpuunit/cpu/*" TNM = TNM_CPU;
-TIMESPEC TS_CE_SLOW = FROM TNM_CPU TS_sys_inst_dcm_cpu_inst_clkfx * 2;
-#
-#INST "sys_inst/sc/planarreq" TNM = TNM_PLANAR;
-TIMESPEC TS_TIG1 = FROM TNM_PLANAR TIG;
