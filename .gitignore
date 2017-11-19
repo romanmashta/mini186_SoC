@@ -47,6 +47,10 @@
 #ip core
 /ipcore_dir/*
 !/ipcore_dir/*.xco
+!/ipcore_dir/*.v
+!/ipcore_dir/*.ngc
+!/ipcore_dir/*.xise
+!/ipcore_dir/*.coe
 
 # iMPACT generated files
 _impactbatch.log
